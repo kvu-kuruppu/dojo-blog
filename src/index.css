@@ -24,10 +24,10 @@
   margin-left: auto;
 }
 
-.navbar a {
+.navbar a {  
   margin-left: 16px;
   text-decoration: none;
-  padding: 6px;
+  padding: 10px;
   color: white;
   background-color: #f1356d;
   border-radius: 8px;
