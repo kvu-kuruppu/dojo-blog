@@ -5,6 +5,8 @@ const Home = () => {
 
     const [blogs, setblogs] = useState(null);
 
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         fetch('http://localhost:8000/blogs')
             .then(
@@ -15,11 +17,13 @@ const Home = () => {
             .then(
                 (data) => {
                     setblogs(data);
+                    setIsLoading(false);
                 });
     }, []);
 
     return (
         <div className="home">
+            {isLoading && <div>Loading...</div>}
             {
                 blogs
                 &&
