@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
     const [title, setTitle] = useState('');
@@ -8,6 +9,8 @@ const Create = () => {
     const [author, setAuthor] = useState('Mario');
 
     const [isLoading, setIsLoading] = useState(false);
+
+    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,6 +26,7 @@ const Create = () => {
         }).then(() => {
             console.log('Done');
             setIsLoading(false);
+            history.push('/');
         });
     };
 
